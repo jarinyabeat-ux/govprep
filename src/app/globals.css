@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens — Tailwind CSS v4 theme
+   ========================================================================== */
+@theme {
+  /* Color system */
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1e40af;
+  --color-primary-soft: #eff6ff;
+  --color-secondary: #f59e0b;
+  --color-secondary-soft: #fffbeb;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-ink: #111827;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+
+  /* Typography */
+  --font-sans: var(--font-prompt), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* Layout */
+  --spacing-shell: 1280px;
+  --spacing-prose: 720px;
+
+  /* Radii */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-soft: 0 1px 2px rgba(17, 24, 39, 0.04),
+    0 8px 24px -12px rgba(17, 24, 39, 0.12);
+  --shadow-lift: 0 2px 4px rgba(17, 24, 39, 0.04),
+    0 20px 40px -16px rgba(29, 78, 216, 0.22);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-primary) 18%, white);
+    color: var(--color-ink);
+  }
+
+  /* Visible, consistent keyboard focus — WCAG 2.4.7 */
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+
+  /* Reserve space so late-loading fonts don't shift layout (CLS) */
+  img,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+@utility shell {
+  width: 100%;
+  max-width: var(--spacing-shell);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility prose-width {
+  max-width: var(--spacing-prose);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 0.75rem;
+  background-color: var(--color-primary);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: top 150ms var(--ease-out-soft);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
