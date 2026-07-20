@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
               }}
               className="group h-full rounded-card border border-line bg-white p-7 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-primary/25 hover:shadow-lift"
             >
-              <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+              <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary-ink transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
                 <Icon className="size-6" aria-hidden="true" />
               </span>
               <h3 className="mt-6 text-lg text-ink">{feature.title}</h3>

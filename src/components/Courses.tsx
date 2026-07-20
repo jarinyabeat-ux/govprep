@@ -47,7 +47,7 @@ export default function Courses() {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 {course.badge ? (
-                  <span className="absolute top-4 left-4 rounded-pill bg-secondary px-3 py-1 text-xs font-bold text-white shadow-soft">
+                  <span className="text-on-gold absolute top-4 left-4 rounded-pill bg-secondary px-3 py-1 text-xs font-bold shadow-soft">
                     {course.badge}
                   </span>
                 ) : null}
@@ -66,7 +66,7 @@ export default function Courses() {
                       className="flex items-center gap-2 text-sm text-ink"
                     >
                       <Check
-                        className="size-4 shrink-0 text-primary"
+                        className="size-4 shrink-0 text-primary-ink"
                         aria-hidden="true"
                       />
                       {point}
@@ -76,17 +76,17 @@ export default function Courses() {
 
                 <div className="mt-6 flex flex-wrap items-end justify-between gap-4 border-t border-line pt-6">
                   <p className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-primary">
+                    <span className="text-3xl font-bold text-primary-ink">
                       {thb(course.price)}
                     </span>
-                    <span className="text-lg font-bold text-primary">฿</span>
+                    <span className="text-lg font-bold text-primary-ink">฿</span>
                   </p>
 
                   <a
                     href={SITE.facebook}
                     {...EXTERNAL_LINK_PROPS}
                     aria-label={`สั่งซื้อ ${course.title} ผ่านเพจ Facebook (เปิดในแท็บใหม่)`}
-                    className="inline-flex items-center gap-2 rounded-pill bg-secondary px-6 py-3 text-[0.95rem] font-bold text-white shadow-soft transition-all duration-200 hover:brightness-95 hover:shadow-lift active:scale-[0.98]"
+                    className="text-on-gold inline-flex items-center gap-2 rounded-pill bg-secondary px-6 py-3 text-[0.95rem] font-bold shadow-soft transition-all duration-200 hover:brightness-95 hover:shadow-lift active:scale-[0.98]"
                   >
                     <Facebook className="size-[1.1em] shrink-0" aria-hidden="true" />
                     สั่งซื้อผ่านเพจ

@@ -8,9 +8,13 @@
      `primary` is a deep amber that holds white text at WCAG AA (4.5:1),
      so buttons and dark blocks that use white text stay readable.
      `accent` is the bright book-cover yellow, used only with dark ink text. */
-  --color-primary: #b45309;
-  --color-primary-hover: #92400e;
-  --color-primary-soft: #fef3c7;
+  --color-primary: #e8ab45;
+  --color-primary-hover: #d9992f;
+  --color-primary-soft: #fdf3e0;
+  /* Darker gold for gold-coloured TEXT or ICONS on light backgrounds, where the
+     bright #e8ab45 fill colour would be too faint to read (eyebrows, price,
+     links, hover states). Fills still use --color-primary. */
+  --color-primary-ink: #9a6a12;
   --color-accent: #f59e0b;
   --color-accent-soft: #fffbeb;
   --color-secondary: #f59e0b;
@@ -120,6 +124,15 @@
 
 @utility prose-width {
   max-width: var(--spacing-prose);
+}
+
+/* White text sitting on the gold primary needs a soft shadow to stay legible,
+   since gold + white alone is below the WCAG contrast threshold. Applied to
+   headings and buttons on gold blocks (stats bar, final CTA, gold buttons). */
+@utility text-on-gold {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(120, 53, 15, 0.55),
+    0 0 1px rgba(120, 53, 15, 0.5);
 }
 
 /* Skip link */

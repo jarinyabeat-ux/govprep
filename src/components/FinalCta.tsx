@@ -27,18 +27,18 @@ export default function FinalCta() {
         >
           <h2
             id="cta-heading"
-            className="text-3xl leading-tight text-white sm:text-4xl md:text-[2.75rem]"
+            className="text-on-gold text-3xl leading-tight sm:text-4xl md:text-[2.75rem]"
           >
             เริ่มเตรียมสอบราชการวันนี้
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="text-on-gold mt-5 text-base leading-relaxed opacity-90 sm:text-lg">
             ติดตามเพจ Facebook เพื่อรับสรุปเนื้อหา แนวข้อสอบ และเทคนิคใหม่ ๆ
             อย่างต่อเนื่อง
           </p>
           <div className="mt-9 flex justify-center">
             <FacebookButton variant="onDark" size="lg" />
           </div>
-          <p className="mt-5 text-sm text-white/70">
+          <p className="text-on-gold mt-5 text-sm opacity-85">
             ฟรี ไม่มีค่าใช้จ่าย ติดต่อสอบถามได้ตลอดเวลา
           </p>
         </motion.div>

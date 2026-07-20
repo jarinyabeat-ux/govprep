@@ -45,7 +45,7 @@ export default function Hero() {
             >
               เตรียมสอบราชการ
               <br />
-              <span className="text-primary">ฉบับคนมีเวลาน้อย</span>
+              <span className="text-primary-ink">ฉบับคนมีเวลาน้อย</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -56,7 +56,7 @@ export default function Hero() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#courses"
-                className="inline-flex items-center justify-center gap-2 rounded-pill bg-primary px-7 py-3.5 text-base font-bold text-white shadow-soft transition-all duration-200 hover:bg-primary-hover hover:shadow-lift active:scale-[0.98]"
+                className="text-on-gold inline-flex items-center justify-center gap-2 rounded-pill bg-primary px-7 py-3.5 text-base font-bold shadow-soft transition-all duration-200 hover:bg-primary-hover hover:shadow-lift active:scale-[0.98]"
               >
                 ดูหนังสือและคอร์ส
                 <ArrowDown className="size-[1.15em] shrink-0" aria-hidden="true" />
@@ -71,7 +71,7 @@ export default function Hero() {
                   className="flex items-center gap-2 text-sm text-muted"
                 >
                   <CheckCircle2
-                    className="size-4 shrink-0 text-primary"
+                    className="size-4 shrink-0 text-primary-ink"
                     aria-hidden="true"
                   />
                   {point}

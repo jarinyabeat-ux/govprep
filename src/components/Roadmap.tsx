@@ -34,7 +34,7 @@ export default function Roadmap() {
             {/* Node */}
             <span
               aria-hidden="true"
-              className="absolute top-1 left-0 grid size-10 place-items-center rounded-full border-2 border-primary bg-white text-xs font-bold text-primary md:left-1/2 md:-translate-x-1/2"
+              className="absolute top-1 left-0 grid size-10 place-items-center rounded-full border-2 border-primary bg-white text-xs font-bold text-primary-ink md:left-1/2 md:-translate-x-1/2"
             >
               {item.step}
             </span>

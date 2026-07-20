@@ -27,7 +27,7 @@ export default function SectionHeading({
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`prose-width ${isCentered ? "mx-auto text-center" : ""}`}
     >
-      <p className="text-sm font-bold tracking-[0.14em] text-primary uppercase">
+      <p className="text-sm font-bold tracking-[0.14em] text-primary-ink uppercase">
         {eyebrow}
       </p>
       <h2

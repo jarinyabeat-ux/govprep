@@ -43,7 +43,7 @@ export default function Footer() {
               href={SITE.facebook}
               {...EXTERNAL_LINK_PROPS}
               aria-label={`เปิดเพจ Facebook ของ ${SITE.name} ในแท็บใหม่`}
-              className="mt-6 inline-flex size-11 items-center justify-center rounded-xl border border-line bg-white text-primary shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:shadow-lift"
+              className="mt-6 inline-flex size-11 items-center justify-center rounded-xl border border-line bg-white text-primary-ink shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:shadow-lift"
             >
               <Facebook className="size-5" aria-hidden="true" />
             </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-[0.925rem] text-muted transition-colors hover:text-primary"
+                    className="text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                   >
                     {link.label}
                   </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                 <a
                   href={SITE.facebook}
                   {...EXTERNAL_LINK_PROPS}
-                  className="inline-flex items-center gap-2 text-[0.925rem] text-muted transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                 >
                   <Facebook className="size-4" aria-hidden="true" />
                   Facebook
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="inline-flex items-center gap-2 text-[0.925rem] text-muted transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                 >
                   <Mail className="size-4" aria-hidden="true" />
                   ติดต่อเรา
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/privacy"
-                  className="text-[0.925rem] text-muted transition-colors hover:text-primary"
+                  className="text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                 >
                   นโยบายความเป็นส่วนตัว
                 </a>

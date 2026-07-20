@@ -41,7 +41,7 @@ export default function PrivacyPage() {
   return (
     <Container className="py-20 md:py-28">
       <article className="prose-width mx-auto">
-        <p className="text-sm font-bold tracking-[0.14em] text-primary uppercase">
+        <p className="text-sm font-bold tracking-[0.14em] text-primary-ink uppercase">
           นโยบาย
         </p>
         <h1 className="mt-3 text-3xl text-ink sm:text-4xl">
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             สอบถามเรื่องความเป็นส่วนตัวได้ที่{" "}
             <a
               href={`mailto:${SITE.email}`}
-              className="font-bold text-primary hover:text-primary-hover"
+              className="font-bold text-primary-ink hover:text-primary-hover"
             >
               {SITE.email}
             </a>{" "}
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
             <a
               href={SITE.facebook}
               {...EXTERNAL_LINK_PROPS}
-              className="font-bold text-primary hover:text-primary-hover"
+              className="font-bold text-primary-ink hover:text-primary-hover"
             >
               เพจ Facebook
             </a>
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
 
         <Link
           href="/"
-          className="mt-8 inline-flex items-center justify-center rounded-pill border border-line bg-white px-6 py-3 font-bold text-ink shadow-soft transition-all hover:border-primary hover:text-primary"
+          className="mt-8 inline-flex items-center justify-center rounded-pill border border-line bg-white px-6 py-3 font-bold text-ink shadow-soft transition-all hover:border-primary hover:text-primary-ink"
         >
           กลับไปหน้าแรก
         </Link>

@@ -22,10 +22,10 @@ export default function Stats() {
             <div key={stat.label}>
               <dt className="sr-only">{stat.label}</dt>
               <dd>
-                <span className="block text-3xl font-bold text-white md:text-4xl">
+                <span className="block text-3xl font-bold text-on-gold md:text-4xl">
                   {stat.value}
                 </span>
-                <span className="mt-1.5 block text-sm text-white/75">
+                <span className="mt-1.5 block text-sm text-white/85">
                   {stat.label}
                 </span>
               </dd>
