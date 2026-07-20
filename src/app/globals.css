@@ -21,6 +21,11 @@
   --color-muted: #78716c;
   --color-line: #ece7e1;
 
+  /* Facebook brand blue — fixed, never themed. Every follow/order button uses
+     this so it stays recognisably Facebook regardless of the site palette. */
+  --color-facebook: #1877f2;
+  --color-facebook-hover: #145fd1;
+
   /* Typography */
   --font-sans: var(--font-prompt), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;

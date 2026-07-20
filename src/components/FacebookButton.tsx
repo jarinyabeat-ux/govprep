@@ -12,11 +12,14 @@ type FacebookButtonProps = {
 };
 
 const VARIANTS: Record<Variant, string> = {
+  // The Facebook button is always Facebook-blue with white text, on every
+  // background — that is the brand cue and what the page owner asked for.
   primary:
-    "bg-primary text-white shadow-soft hover:bg-primary-hover hover:shadow-lift",
+    "bg-facebook text-white shadow-soft hover:bg-facebook-hover hover:shadow-lift",
   secondary:
-    "border border-line bg-white text-ink shadow-soft hover:border-primary hover:text-primary",
-  onDark: "bg-white text-primary shadow-lift hover:bg-primary-soft",
+    "bg-facebook text-white shadow-soft hover:bg-facebook-hover hover:shadow-lift",
+  onDark:
+    "bg-facebook text-white shadow-lift hover:bg-facebook-hover",
 };
 
 const SIZES: Record<Size, string> = {

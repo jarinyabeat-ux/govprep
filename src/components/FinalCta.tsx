@@ -39,7 +39,7 @@ export default function FinalCta() {
             <FacebookButton variant="onDark" size="lg" />
           </div>
           <p className="mt-5 text-sm text-white/70">
-            ฟรี ไม่มีค่าใช้จ่าย และเลิกติดตามเมื่อไหร่ก็ได้
+            ฟรี ไม่มีค่าใช้จ่าย ติดต่อสอบถามได้ตลอดเวลา
           </p>
         </motion.div>
       </Container>
