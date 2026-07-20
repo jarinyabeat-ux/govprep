@@ -1,4 +1,3 @@
-import { ARTICLES } from "@/data/articles";
 import { COURSES } from "@/data/courses";
 import { FAQS } from "@/data/faqs";
 import { SITE } from "@/data/site";
@@ -64,23 +63,6 @@ export function faqSchema() {
         "@type": "Answer",
         text: faq.answer,
       },
-    })),
-  };
-}
-
-/** https://schema.org/ItemList — the featured article rail. */
-export function articleListSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": `${SITE.url}/#featured-articles`,
-    name: "บทความแนะนำ",
-    itemListElement: ARTICLES.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: article.title,
-      description: article.description,
-      url: `${SITE.url}/articles/${article.slug}`,
     })),
   };
 }

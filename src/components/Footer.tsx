@@ -1,13 +1,13 @@
+import Image from "next/image";
 import { Facebook, Mail } from "lucide-react";
 import Container from "./Container";
 import { EXTERNAL_LINK_PROPS, SITE } from "@/data/site";
 
 const SITE_LINKS = [
   { label: "หน้าแรก", href: "#home" },
-  { label: "หมวดสอบ", href: "#categories" },
   { label: "หนังสือและคอร์ส", href: "#courses" },
-  { label: "บทความ", href: "#articles" },
-  { label: "แหล่งข้อมูลฟรี", href: "#resources" },
+  { label: "รีวิว", href: "#reviews" },
+  { label: "เส้นทางเตรียมสอบ", href: "#roadmap" },
   { label: "คำถามที่พบบ่อย", href: "#faq" },
 ];
 
@@ -21,12 +21,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={40}
+                height={40}
                 aria-hidden="true"
-                className="grid size-10 place-items-center rounded-xl bg-primary text-sm font-bold text-white"
-              >
-                ก.
-              </span>
+                className="size-10 rounded-full object-cover ring-1 ring-line"
+              />
               <span className="flex flex-col leading-tight">
                 <span className="font-bold text-ink">{SITE.logoLine1}</span>
                 <span className="text-xs text-muted">{SITE.logoLine2}</span>

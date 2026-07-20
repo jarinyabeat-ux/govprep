@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "./Container";
@@ -54,12 +55,14 @@ export default function Navbar() {
             className="group flex shrink-0 items-center gap-2.5"
             aria-label={`${SITE.name} — กลับไปยังหน้าแรก`}
           >
-            <span
+            <Image
+              src="/logo-mark.png"
+              alt=""
+              width={40}
+              height={40}
               aria-hidden="true"
-              className="grid size-9 place-items-center rounded-xl bg-primary text-sm font-bold text-white transition-transform duration-300 group-hover:scale-105 md:size-10"
-            >
-              ก.
-            </span>
+              className="size-9 rounded-full object-cover ring-1 ring-line transition-transform duration-300 group-hover:scale-105 md:size-10"
+            />
             <span className="flex flex-col leading-tight">
               <span className="text-[0.95rem] font-bold text-ink md:text-base">
                 {SITE.logoLine1}

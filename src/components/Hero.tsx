@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Soft ambient wash — decorative only */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_70%_0%,rgba(29,78,216,0.07),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_70%_0%,rgba(245,158,11,0.10),transparent_70%)]"
       />
 
       <Container>

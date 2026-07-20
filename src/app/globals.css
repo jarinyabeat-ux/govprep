@@ -4,17 +4,22 @@
    Design tokens — Tailwind CSS v4 theme
    ========================================================================== */
 @theme {
-  /* Color system */
-  --color-primary: #1d4ed8;
-  --color-primary-hover: #1e40af;
-  --color-primary-soft: #eff6ff;
+  /* Color system — premium gold.
+     `primary` is a deep amber that holds white text at WCAG AA (4.5:1),
+     so buttons and dark blocks that use white text stay readable.
+     `accent` is the bright book-cover yellow, used only with dark ink text. */
+  --color-primary: #b45309;
+  --color-primary-hover: #92400e;
+  --color-primary-soft: #fef3c7;
+  --color-accent: #f59e0b;
+  --color-accent-soft: #fffbeb;
   --color-secondary: #f59e0b;
   --color-secondary-soft: #fffbeb;
   --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-ink: #111827;
-  --color-muted: #6b7280;
-  --color-line: #e5e7eb;
+  --color-surface: #fefaf3;
+  --color-ink: #1c1917;
+  --color-muted: #78716c;
+  --color-line: #ece7e1;
 
   /* Typography */
   --font-sans: var(--font-prompt), ui-sans-serif, system-ui, -apple-system,
@@ -31,8 +36,8 @@
   /* Elevation */
   --shadow-soft: 0 1px 2px rgba(17, 24, 39, 0.04),
     0 8px 24px -12px rgba(17, 24, 39, 0.12);
-  --shadow-lift: 0 2px 4px rgba(17, 24, 39, 0.04),
-    0 20px 40px -16px rgba(29, 78, 216, 0.22);
+  --shadow-lift: 0 2px 4px rgba(28, 25, 23, 0.04),
+    0 20px 40px -16px rgba(180, 83, 9, 0.24);
 
   /* Motion */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
