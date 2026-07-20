@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, CheckCircle2 } from "lucide-react";
 import Container from "./Container";
 import FacebookButton from "./FacebookButton";
-import HeroIllustration from "./HeroIllustration";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -24,7 +24,7 @@ export default function Hero() {
       />
 
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
+        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
           {/* Copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function Hero() {
                 aria-hidden="true"
                 className="size-1.5 rounded-full bg-secondary"
               />
-              สรุปเนื้อหาสอบราชการ อ่านฟรีทุกบท
+              ติวสอบราชการ ประจำปี 2569 · ก.พ. ระดับ 2–3–4
             </span>
 
             <h1
@@ -50,14 +50,15 @@ export default function Hero() {
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
               สรุปเนื้อหาสอบราชการแบบเข้าใจง่าย อ่านวันละ 10 นาที ก็เตรียมสอบได้
+              ติวตรงจุด พร้อมแนวข้อสอบที่ใกล้สนามจริง
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href="#articles"
+                href="#courses"
                 className="inline-flex items-center justify-center gap-2 rounded-pill bg-primary px-7 py-3.5 text-base font-bold text-white shadow-soft transition-all duration-200 hover:bg-primary-hover hover:shadow-lift active:scale-[0.98]"
               >
-                เริ่มอ่านฟรี
+                ดูหนังสือและคอร์ส
                 <ArrowDown className="size-[1.15em] shrink-0" aria-hidden="true" />
               </a>
               <FacebookButton variant="secondary" size="lg" />
@@ -79,14 +80,24 @@ export default function Hero() {
             </ul>
           </motion.div>
 
-          {/* Illustration */}
+          {/* Master banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="relative mx-auto w-full max-w-[560px]"
+            className="relative mx-auto w-full max-w-[620px]"
           >
-            <HeroIllustration />
+            <div className="overflow-hidden rounded-card border border-line shadow-lift">
+              <Image
+                src="/hero-main.jpg"
+                alt="ติวสอบราชการ ประจำปี 2569 ก.พ. ระดับ 2-3-4 โดยเพจเตรียมสอบราชการ ฉบับคนมีเวลาน้อย"
+                width={1915}
+                height={709}
+                priority
+                sizes="(max-width: 1024px) 100vw, 620px"
+                className="h-auto w-full"
+              />
+            </div>
           </motion.div>
         </div>
       </Container>

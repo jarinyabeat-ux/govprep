@@ -5,9 +5,9 @@ import { EXTERNAL_LINK_PROPS, SITE } from "@/data/site";
 const SITE_LINKS = [
   { label: "หน้าแรก", href: "#home" },
   { label: "หมวดสอบ", href: "#categories" },
+  { label: "หนังสือและคอร์ส", href: "#courses" },
   { label: "บทความ", href: "#articles" },
   { label: "แหล่งข้อมูลฟรี", href: "#resources" },
-  { label: "เส้นทางเตรียมสอบ", href: "#roadmap" },
   { label: "คำถามที่พบบ่อย", href: "#faq" },
 ];
 

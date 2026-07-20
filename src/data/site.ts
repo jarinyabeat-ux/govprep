@@ -50,6 +50,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "หน้าแรก", href: "#home" },
   { label: "หมวดสอบ", href: "#categories" },
+  { label: "หนังสือและคอร์ส", href: "#courses" },
   { label: "บทความ", href: "#articles" },
   { label: "คำถามที่พบบ่อย", href: "#faq" },
   { label: "Facebook", href: SITE.facebook, external: true },

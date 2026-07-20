@@ -1,4 +1,5 @@
 import { ARTICLES } from "@/data/articles";
+import { COURSES } from "@/data/courses";
 import { FAQS } from "@/data/faqs";
 import { SITE } from "@/data/site";
 
@@ -99,3 +100,32 @@ export function breadcrumbSchema() {
     ],
   };
 }
+
+/** https://schema.org/ItemList of Products — the books & courses on offer. */
+export function courseListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE.url}/#courses`,
+    name: "หนังสือและคอร์สเตรียมสอบ ก.พ.",
+    itemListElement: COURSES.map((course, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: course.title,
+        description: course.description,
+        image: `${SITE.url}${course.image}`,
+        brand: { "@id": `${SITE.url}/#organization` },
+        offers: {
+          "@type": "Offer",
+          price: course.price,
+          priceCurrency: "THB",
+          availability: "https://schema.org/InStock",
+          url: SITE.facebook,
+        },
+      },
+    })),
+  };
+}
+
