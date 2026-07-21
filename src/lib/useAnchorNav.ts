@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useCallback } from "react";
 
 /**
@@ -8,43 +8,43 @@ import { useCallback } from "react";
  *
  * Next.js <Link> treats "/#home" as "scroll to #home on the current route",
  * which fails on sub-pages like /privacy where that section doesn't exist —
- * the URL changes but the page never navigates home. This handler fixes that:
+ * the URL changes but the page never actually navigates home.
  *
- *  - On the homepage: smooth-scroll to the section (or top for #home).
- *  - On any other page: fall through to a normal navigation to "/#section",
- *    so the browser loads the homepage and then jumps to the section.
+ *  - On the homepage: intercept and smooth-scroll to the section (top for #home).
+ *  - On any other page: do a real browser navigation to the homepage anchor via
+ *    window.location, which reliably loads "/" and then jumps to the section.
+ *    (router.push with a hash does not reliably change the route here.)
  */
 export function useAnchorNav() {
-  const router = useRouter();
   const pathname = usePathname();
 
   return useCallback(
     (href: string) => (event: React.MouseEvent) => {
-      // Only handle internal "/#section" links here.
+      // Only handle internal "/#section" links.
       if (!href.startsWith("/#")) return;
 
       const id = href.slice(2); // "home", "courses", ...
 
-      if (pathname === "/") {
-        // Already home — intercept and scroll smoothly.
+      if (pathname !== "/") {
+        // On another route (e.g. /privacy): force a real navigation home.
         event.preventDefault();
-        if (id === "home") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          history.replaceState(null, "", "/");
-        } else {
-          const el = document.getElementById(id);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-            history.replaceState(null, "", href);
-          }
-        }
+        window.location.href = id === "home" ? "/" : href;
         return;
       }
 
-      // On another route — force a real navigation to the homepage anchor.
+      // Already on the homepage — intercept and scroll smoothly.
       event.preventDefault();
-      router.push(href);
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        history.replaceState(null, "", "/");
+      } else {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          history.replaceState(null, "", href);
+        }
+      }
     },
-    [pathname, router]
+    [pathname]
   );
 }
