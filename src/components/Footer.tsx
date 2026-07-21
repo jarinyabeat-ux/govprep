@@ -1,14 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Facebook, Mail } from "lucide-react";
 import Container from "./Container";
 import { EXTERNAL_LINK_PROPS, SITE } from "@/data/site";
 
 const SITE_LINKS = [
-  { label: "หน้าแรก", href: "#home" },
-  { label: "หนังสือและคอร์ส", href: "#courses" },
-  { label: "รีวิว", href: "#reviews" },
-  { label: "เส้นทางเตรียมสอบ", href: "#roadmap" },
-  { label: "คำถามที่พบบ่อย", href: "#faq" },
+  { label: "หน้าแรก", href: "/#home" },
+  { label: "หนังสือและคอร์ส", href: "/#courses" },
+  { label: "รีวิว", href: "/#reviews" },
+  { label: "เส้นทางเตรียมสอบ", href: "/#roadmap" },
+  { label: "คำถามที่พบบ่อย", href: "/#faq" },
 ];
 
 export default function Footer() {
@@ -60,12 +61,12 @@ export default function Footer() {
             <ul className="mt-4 flex flex-col gap-2.5">
               {SITE_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -97,12 +98,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
+                <Link
                   href="/privacy"
                   className="text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
                 >
                   นโยบายความเป็นส่วนตัว
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

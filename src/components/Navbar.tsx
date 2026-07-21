@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "./Container";
@@ -50,8 +51,8 @@ export default function Navbar() {
           className="flex h-16 items-center justify-between gap-4 md:h-20"
         >
           {/* Logo */}
-          <a
-            href="#home"
+          <Link
+            href="/#home"
             className="group flex shrink-0 items-center gap-2.5"
             aria-label={`${SITE.name} — กลับไปยังหน้าแรก`}
           >
@@ -71,24 +72,33 @@ export default function Navbar() {
                 {SITE.logoLine2}
               </span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop menu */}
           <ul className="hidden items-center gap-1 lg:flex">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  {...(item.external ? EXTERNAL_LINK_PROPS : {})}
-                  className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[0.95rem] font-normal text-muted transition-colors duration-200 hover:bg-surface hover:text-ink"
-                >
-                  {item.label}
-                  {item.external ? (
+            {NAV_ITEMS.map((item) =>
+              item.external ? (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    {...EXTERNAL_LINK_PROPS}
+                    className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[0.95rem] font-normal text-muted transition-colors duration-200 hover:bg-surface hover:text-ink"
+                  >
+                    {item.label}
                     <ExternalLink className="size-3.5" aria-hidden="true" />
-                  ) : null}
-                </a>
-              </li>
-            ))}
+                  </a>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[0.95rem] font-normal text-muted transition-colors duration-200 hover:bg-surface hover:text-ink"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="flex items-center gap-2">
@@ -130,21 +140,31 @@ export default function Navbar() {
           >
             <Container className="py-4">
               <ul className="flex flex-col gap-1">
-                {NAV_ITEMS.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      {...(item.external ? EXTERNAL_LINK_PROPS : {})}
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-normal text-ink transition-colors hover:bg-surface"
-                    >
-                      {item.label}
-                      {item.external ? (
+                {NAV_ITEMS.map((item) =>
+                  item.external ? (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        {...EXTERNAL_LINK_PROPS}
+                        onClick={() => setIsOpen(false)}
+                        className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-normal text-ink transition-colors hover:bg-surface"
+                      >
+                        {item.label}
                         <ExternalLink className="size-4 text-muted" aria-hidden="true" />
-                      ) : null}
-                    </a>
-                  </li>
-                ))}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-normal text-ink transition-colors hover:bg-surface"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
               <FacebookButton size="md" className="mt-3 w-full sm:hidden" />
             </Container>
