@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Mail } from "lucide-react";
 import Container from "./Container";
+import FooterNav from "./FooterNav";
 import { EXTERNAL_LINK_PROPS, SITE } from "@/data/site";
 
 const SITE_LINKS = [
@@ -58,18 +59,7 @@ export default function Footer() {
             >
               เมนู
             </h2>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {SITE_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[0.925rem] text-muted transition-colors hover:text-primary-ink"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterNav links={SITE_LINKS} />
           </nav>
 
           {/* Contact & policy */}

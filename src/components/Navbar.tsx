@@ -8,10 +8,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Container from "./Container";
 import FacebookButton from "./FacebookButton";
 import { EXTERNAL_LINK_PROPS, NAV_ITEMS, SITE } from "@/data/site";
+import { useAnchorNav } from "@/lib/useAnchorNav";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const onAnchorClick = useAnchorNav();
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8);
@@ -53,6 +55,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/#home"
+            onClick={onAnchorClick("/#home")}
             className="group flex shrink-0 items-center gap-2.5"
             aria-label={`${SITE.name} — กลับไปยังหน้าแรก`}
           >
@@ -92,6 +95,7 @@ export default function Navbar() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
+                    onClick={onAnchorClick(item.href)}
                     className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[0.95rem] font-normal text-muted transition-colors duration-200 hover:bg-surface hover:text-ink"
                   >
                     {item.label}
@@ -157,7 +161,10 @@ export default function Navbar() {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => {
+                          onAnchorClick(item.href)(e);
+                          setIsOpen(false);
+                        }}
                         className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-normal text-ink transition-colors hover:bg-surface"
                       >
                         {item.label}
